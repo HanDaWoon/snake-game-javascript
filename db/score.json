@@ -1,0 +1,39 @@
+{
+  "scores": [
+    {
+      "player": "wesdf",
+      "score": 3,
+      "id": 1
+    },
+    {
+      "player": "plqweo",
+      "score": 4,
+      "id": 2
+    },
+    {
+      "player": "test",
+      "score": 4,
+      "id": 3
+    },
+    {
+      "player": "hdw",
+      "score": 14,
+      "id": 4
+    },
+    {
+      "player": "hdw2",
+      "score": 17,
+      "id": 5
+    },
+    {
+      "player": "esukmean",
+      "score": 14,
+      "id": 6
+    },
+    {
+      "player": "ㄴㅇㅁㅇ",
+      "score": 4,
+      "id": 7
+    }
+  ]
+}

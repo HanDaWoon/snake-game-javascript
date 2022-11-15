@@ -157,7 +157,7 @@ const slowDown = () => {
 	useSlow = true;
 };
 
-const speedUp = () => (interval -= 10);
+const speedUp = () => (interval -= 15);
 
 const speedDown = () => {
 	interval += 250;
@@ -167,7 +167,7 @@ const speedDown = () => {
 };
 
 const getScore = () => {
-	fetch("http://localhost:8081/scores?_sort=score&_order=desc&_limit=5", {
+	fetch("http://home-sv:8087/scores?_sort=score&_order=desc&_limit=5", {
 		method: "GET",
 	})
 		.then((res) => {
@@ -180,7 +180,7 @@ const getScore = () => {
 
 const postScore = () => {
 	player = document.getElementById("player-name").value;
-	fetch("http://localhost:8081/scores", {
+	fetch("http://home-sv:8087/scores", {
 		method: "POST",
 		headers: {
 			Aceept: "application/json",

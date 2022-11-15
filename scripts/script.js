@@ -3,6 +3,7 @@ let canvas = document.getElementById("snake"); // criar elemento que irá rodar 
 let context = canvas.getContext("2d");
 let scoreShow = document.getElementById("score");
 let btnHow = document.getElementById("btn-how");
+let btnScore = document.getElementById("btn-score");
 let box = 32;
 let score = 0;
 let interval = 250;
@@ -65,7 +66,6 @@ function startGame() {
 
 	for (i = 1; i < snake.length; i++) {
 		if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
-			clearInterval(game);
 			alert("Game Over :(");
 			endGame();
 		}
@@ -141,7 +141,8 @@ const restart = () => {
 		y: 8 * box,
 	};
 	canvas.style.display = "block";
-	startInterval(10);
+	getScore();
+	game = setInterval(startGame, 10);
 };
 
 // score counter
@@ -156,16 +157,12 @@ const slowDown = () => {
 	useSlow = true;
 };
 
-const startInterval = (_interval) => {
-	game = setInterval(startGame, _interval);
-};
-const speedUp = () => {
-	interval -= 10;
-};
+const speedUp = () => (interval -= 10);
+
 const speedDown = () => {
-	interval += 300;
+	interval += 250;
 	setTimeout(() => {
-		interval -= 100;
+		interval -= 150;
 	}, 5000);
 };
 
@@ -205,6 +202,13 @@ btnHow.addEventListener("click", () => {
 		"Use the arrow keys to move the snake and use space to slow down !Only use space once!"
 	);
 });
+btnScore.addEventListener("click", () => {
+	alert(`
+	1st - ${scores[0].player} - ${scores[0].score} points
+	2nd - ${scores[1].player} - ${scores[1].score} points
+	3rd - ${scores[2].player} - ${scores[2].score} points
+	`);
+});
 
 getScore();
-startInterval(10);
+game = setInterval(startGame, 10);

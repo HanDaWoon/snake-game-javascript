@@ -6,10 +6,11 @@ let btnHow = document.getElementById("btn-how");
 let btnScore = document.getElementById("btn-score");
 let box = 32;
 let score = 0;
-let interval = 250;
+let speed = 250;
 let scores;
 let useSlow = false;
 let direction = "right";
+let count;
 
 let snake = []; // criar cobrinha como lista, já que ela vai ser uma série de coordenadas, que quando pintadas, criam os quadradinhos
 
@@ -53,10 +54,10 @@ function update(event) {
 	}
 }
 
-let count = 0;
+count = 0;
 function startGame() {
 	count += 1;
-	if (count < interval / 10) return;
+	if (count < speed / 10) return;
 	count = 0;
 
 	if (snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
@@ -107,18 +108,17 @@ const endGame = () => {
 	canvas.style.display = "none";
 	let endDiv = document.createElement("div");
 	let stable = document.createElement("table");
-	let endT3 = document.createElement("t3");
+	let endH3 = document.createElement("h3");
 	let btnRestart = document.createElement("button");
-	endDiv.innerHTML = '<div class="end-game"><h1>Game Over</h1>';
+	endDiv.innerHTML = "<h1>Game Over</h1>";
 	stable.innerHTML = "<tr><th>Player</th><th>Score</th></tr>";
 	scores.forEach((k) => {
 		stable.innerHTML += `<tr><td>${k.player}</td><td>${k.score}</td></tr>`;
 	});
-	endT3.innerHTML +=
-		'<input type="text" id="player-name" placeholder="Player Name" />';
-	endT3.innerHTML += '<button id="btn-post">Save score</button></div>';
+	endH3.innerHTML +=
+		'<input type="text" id="player-name" placeholder="Player Name" /><button id="btn-post">Save score</button>';
 	endDiv.appendChild(stable);
-	endDiv.appendChild(endT3);
+	endDiv.appendChild(endH3);
 	btnRestart.innerHTML = "Restart";
 	btnRestart.id = "btn-restart";
 	btnRestart.style.margin = "10px";
@@ -131,8 +131,10 @@ const endGame = () => {
 // restart game
 const restart = () => {
 	document.getElementById("bb").remove();
-	interval = 250;
+	speed = 250;
 	score = 0;
+	useSlow = false;
+	count = 0;
 	scoreCnt();
 	// set snake to initial position and direction
 	snake = [];
@@ -157,12 +159,11 @@ const slowDown = () => {
 	useSlow = true;
 };
 
-const speedUp = () => (interval -= 15);
-
+const speedUp = () => (speed -= 15);
 const speedDown = () => {
-	interval += 250;
+	speed += 250;
 	setTimeout(() => {
-		interval -= 150;
+		speed -= 150;
 	}, 5000);
 };
 
@@ -203,11 +204,9 @@ btnHow.addEventListener("click", () => {
 	);
 });
 btnScore.addEventListener("click", () => {
-	alert(`
-	1st - ${scores[0].player} - ${scores[0].score} points
-	2nd - ${scores[1].player} - ${scores[1].score} points
-	3rd - ${scores[2].player} - ${scores[2].score} points
-	`);
+	alert(`1st - ${scores[0].player} - ${scores[0].score} points
+2nd - ${scores[1].player} - ${scores[1].score} points
+3rd - ${scores[2].player} - ${scores[2].score} points`);
 });
 
 getScore();

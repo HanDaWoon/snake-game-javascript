@@ -16,17 +16,11 @@
 </p>
 
 <!--About session-->
-<h1 align="center">Recriando o jogo da cobrinha com JavaScript<br>Digital Innovation One</h1>
+<h1 align="center">HTML과 자바 스크립트를 이용하여 타 프로젝트를 업그레이드 했습니다.</h1>
 
-Curso do Bootcamp HTML Web Developer da [Digital Innovation One](https://digitalinnovation.one/).
+<img src="./assets/image.png" title="Badge" width="70" height="70">
 
-<img src="./assets/badge.png" title="Badge" width="70" height="70">
-
-Já pensou em criar seu próprio jogo do zero? Aprenda a desenvolver de forma simples o clássico jogo da cobrinha (Game Snake) utilizando HTML, CSS e JavaScript.
-
-<i>Depois vou codificá-lo de forma responsiva. Ainda falta algumas melhorias a serem realizadas, como contagem de tempo e de comida utilizada, e mostrar uma mensagem de Game Over ao invés do alert.</i>
-
-- [Projeto desenvolvido](https://game-snake.vercel.app/)
+기존 프로젝트에서 색 변경, 도움말 보기, 점수 json-server연동, 종료 화면 등 추가로 구현하였습니다.
 
 <p align="center"><img src="./assets/projeto.gif" title="Game Snake - DIO"></p>
 <!-- <p align="center"><img src="./assets/projeto-responsivo.gif" title="Game Snake - DIO"></p><br> -->
@@ -38,9 +32,9 @@ Já pensou em criar seu próprio jogo do zero? Aprenda a desenvolver de forma si
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)<br>
 
 <!--License session-->
-<h3>📝 Licença</h3>
+<h3>📝 License</h3>
 
-- Este projeto está sob a licença [MIT](./LICENSE).<br>
+- [MIT](./LICENSE).<br>
 
 <!--Bottom session-->
 <br><h4 align=center>Made with by <a target="_blank" href="https://pleiterson.vercel.app" >Pleiterson Amorim</a></h4>

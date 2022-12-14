@@ -18,11 +18,9 @@
 <!--About session-->
 <h1 align="center">HTML과 자바 스크립트를 이용하여 타 프로젝트를 업그레이드 했습니다.</h1>
 
-<img src="./assets/image.png" title="Badge" width="70" height="70">
-
 기존 프로젝트에서 색 변경, 도움말 보기, 점수 json-server연동, 종료 화면 등 추가로 구현하였습니다.
 
-<p align="center"><img src="./assets/projeto.gif" title="Game Snake - DIO"></p>
+<p align="center"><img src="./assets/image.png" title="Game Snake - DIO"></p>
 <!-- <p align="center"><img src="./assets/projeto-responsivo.gif" title="Game Snake - DIO"></p><br> -->
 
 <h3>👨‍💻 Tecnologias utilizadas</h3>
